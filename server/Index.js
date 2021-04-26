@@ -7,11 +7,13 @@ import blogRoutes from './routes/Blogs.js';
 
 const app = express();
 
-app.use('/blogs',blogRoutes);
+
 
 app.use(bodyParser.json({limit : "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit : "30mb", extended: true}));
 app.use(cors());
+
+app.use('/blogs',blogRoutes);
 
 const CONNECTION_URL = 'mongodb+srv://neevshah1273:Neevshah1@cluster0.jfmip.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
