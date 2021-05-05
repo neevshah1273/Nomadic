@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Reenie Beanie' ;
+    src: local('Reenie Beanie'),url(./fonts/ReenieBeanie-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NIGHTMARE PILLS' ;
+    src: local('NIGHTMARE PILLS'),url(./fonts/NightmarePills-BV2w.ttf) format('truetype');
+}

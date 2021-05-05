@@ -19,6 +19,8 @@ export const createBlog = async (req,res)=>{
 
     const newBlog = new BlogProperties(blog);
 
+    console.log(blog.creator);
+
     try {
         
         await newBlog.save();
@@ -26,7 +28,7 @@ export const createBlog = async (req,res)=>{
         res.status(201).json(newBlog);
 
     } catch (error) {
-
+        //console.log(error);
         res.status(409).json({message : error.message});
     }
 }

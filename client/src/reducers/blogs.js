@@ -3,7 +3,7 @@ const blogs = (blogs =[], action) => {
         case 'FETCH_ALL':
             return action.payload;
         case 'CREATE':
-            return blogs;
+            return [...blogs,action.payload];
         default:
             return blogs;
     }
