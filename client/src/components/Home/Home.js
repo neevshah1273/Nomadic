@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import {signin,signup } from '../../actions/auth';
+
 
 import useStyles from './styles';
 import './Home.css';
@@ -11,21 +13,39 @@ import {Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import {Button} from '@material-ui/core';
 import Icon from './icon';
 
-const Home = () => {
-    const [form, setForm] = useState({ userame: '', email: '', password: ''});
-    const [isSignup,setIsSignup] = useState(true);
-    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-    const [usernameAvl,SetUsernameAvl] = useState(true);
 
+const Home = () => {
+    const [formData, setFormData] = useState({ userame: '', email: '', password: ''});
+    const [isSignup,setIsSignup] = useState(true);
+    const [usernameAvl,SetUsernameAvl] = useState(true);
+    
 
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyles();
 
+    const handleChange = (e) => {setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);}
+    
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        console.log('mm;klm;m;k');
+        if(isSignup){
+            dispatch(signup(formData, history))
+        }else{
+            dispatch(signin(formData, history))
+        }
+    }
+    
+    
+
+
     const switchMode = () => {
-        setForm({ userame: '', email: '', password: ''});
+        setFormData({ userame: '', email: '', password: ''});
         setIsSignup((prevIsSignup) => !prevIsSignup);
     };
+
+
 
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
@@ -38,9 +58,9 @@ const Home = () => {
         } catch (error) {
           console.log(error);
         }
-      }
+    }
 
-      const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
+    const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
 
     return(
         <div>
@@ -59,15 +79,15 @@ const Home = () => {
                         
                         <Jumbotron >
                             <Container>
-                                <Form>
+                                <Form onSubmit={handleSubmit}>
                                     {isSignup?
                                     <FormGroup>
                                         <Label for="username">Username</Label>
-                                        <div class="input-group mb-2">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text sptext">@</div>
+                                        <div className="input-group mb-2">
+                                            <div className="input-group-prepend">
+                                                <div className="input-group-text sptext">@</div>
                                             </div>
-                                            <Input valid={usernameAvl} handleChange={handleChange} type="text" name="username" id="username" placeholder="username" />
+                                            <Input valid={usernameAvl} handlechange={handleChange} type="text" name="username" id="username" placeholder="username" />
                                             {usernameAvl?
                                                 <FormFeedback valid tooltip>that name is available</FormFeedback>
                                                 :(
@@ -82,14 +102,14 @@ const Home = () => {
                                     }
                                     <FormGroup className="mt-5">
                                         <Label for="exampleEmail">Email</Label>
-                                        <Input type="email" handleChange={handleChange} name="email" id="exampleEmail" placeholder="Enter your E-mail" />
+                                        <Input type="email" handlechange={handleChange} name="email" id="exampleEmail" placeholder="Enter your E-mail" />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="examplePassword">Password</Label>
-                                        <Input type="password" handleChange={handleChange} name="password" id="examplePassword" placeholder="Enter a password" />
+                                        <Input type="password" handlechange={handleChange} name="password" id="examplePassword" placeholder="Enter a password" />
                                     </FormGroup>
                                     <div className="submit-btn d-flex justify-content-center">
-                                        <Button color="primary" className="submit mt-1 mb-1" disabled={!isSignup} >
+                                        <Button color="primary" type="Submit" className="submit mt-1 mb-1" /*disabled={!isSignup}*/ >
                                             
                                                 Submit
                                             
@@ -133,9 +153,6 @@ const Home = () => {
                     
                 </div>
             </div>
-            
-            
-            
         </div>
     )
 }

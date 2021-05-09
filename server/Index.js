@@ -3,7 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import blogRoutes from './routes/Blogs.js';
-
+import userRoutes from './routes/users.js';
 
 const app = express();
 
@@ -15,6 +15,7 @@ app.use(express.urlencoded({limit : "30mb", extended: true}));
 app.use(cors());
 
 app.use('/blogs',blogRoutes);
+app.use('/user',userRoutes);
 
 const CONNECTION_URL = 'mongodb+srv://neevshah1273:Neevshah1@cluster0.jfmip.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
