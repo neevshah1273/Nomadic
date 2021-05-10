@@ -15,7 +15,7 @@ import Icon from './icon';
 
 
 const Home = () => {
-    const [formData, setFormData] = useState({ userame: '', email: '', password: ''});
+    const [formData, setFormData] = useState({ username: '', email: '', password: ''});
     const [isSignup,setIsSignup] = useState(true);
     const [usernameAvl,SetUsernameAvl] = useState(true);
     
@@ -24,8 +24,13 @@ const Home = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    const handleChange = (e) => {setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);}
+    const handleChange = (e) => {
+        //console.log(e.target.name);
+        setFormData({ ...formData, [e.target.name] : e.target.value });
+        console.log(e.target.value);
+        console.log(formData);
+        
+    }
     
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -87,7 +92,7 @@ const Home = () => {
                                             <div className="input-group-prepend">
                                                 <div className="input-group-text sptext">@</div>
                                             </div>
-                                            <Input valid={usernameAvl} handlechange={handleChange} type="text" name="username" id="username" placeholder="username" />
+                                            <Input valid={usernameAvl} onChange={handleChange} type="text" name="username" id="username" placeholder="username" />
                                             {usernameAvl?
                                                 <FormFeedback valid tooltip>that name is available</FormFeedback>
                                                 :(
@@ -95,18 +100,17 @@ const Home = () => {
                                                 )
                                             }
                                         </div>
-
                                     </FormGroup>    
                                     :(<div></div>)
 
                                     }
                                     <FormGroup className="mt-5">
                                         <Label for="exampleEmail">Email</Label>
-                                        <Input type="email" handlechange={handleChange} name="email" id="exampleEmail" placeholder="Enter your E-mail" />
+                                        <Input type="email" onChange={handleChange} name="email" id="exampleEmail" placeholder="Enter your E-mail" />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="examplePassword">Password</Label>
-                                        <Input type="password" handlechange={handleChange} name="password" id="examplePassword" placeholder="Enter a password" />
+                                        <Input type="password" onChange={handleChange} name="password" id="examplePassword" placeholder="Enter a password" />
                                     </FormGroup>
                                     <div className="submit-btn d-flex justify-content-center">
                                         <Button color="primary" type="Submit" className="submit mt-1 mb-1" /*disabled={!isSignup}*/ >
