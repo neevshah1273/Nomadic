@@ -45,3 +45,26 @@ export const signup = async (req,res) => {
         res.status(500).json({message: 'Something Went Wrong'});
     }
 }
+
+
+
+export const UserAvl = async (req,res) => {
+
+    const {username} = req.body;
+    // console.log(req.body);
+    //console.log('sss');
+    try {
+        console.log(username);
+        const existingUser = await user.findOne({username});
+
+        if(existingUser){
+            res.status(200).json({result: false});
+        }
+        else {
+            res.status(200).json({result: true});
+        }
+            
+    } catch (error) {
+        res.status(500).json({message: 'Something Went Wrong'});        
+    }
+}

@@ -1,9 +1,8 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import { GoogleLogin } from 'react-google-login';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import {signin,signup } from '../../actions/auth';
-
+import {signin,signup,userAvl } from '../../actions/auth';
 
 import useStyles from './styles';
 import './Home.css';
@@ -19,6 +18,10 @@ const Home = () => {
     const [isSignup,setIsSignup] = useState(true);
     const [usernameAvl,SetUsernameAvl] = useState(true);
     
+    //let usernameAvl = true;
+    
+    let ttx = useSelector((state)=> state.Users);
+    console.log(ttx);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -27,14 +30,17 @@ const Home = () => {
     const handleChange = (e) => {
         //console.log(e.target.name);
         setFormData({ ...formData, [e.target.name] : e.target.value });
-        console.log(e.target.value);
-        console.log(formData);
-        
+        //console.log(e.target.value);
+        //console.log(formData);
+        if(isSignup){
+            //console.log(formData.username);
+            dispatch(userAvl(formData.username));
+        }
     }
     
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log('mm;klm;m;k');
+        //console.log('mm;klm;m;k');
         if(isSignup){
             dispatch(signup(formData, history))
         }else{

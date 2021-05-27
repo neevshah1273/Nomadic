@@ -9,7 +9,8 @@ export const getBlogs = async (req,res)=>{
         res.status(200).json(blogProperties);
 
     } catch (error) {
-        res.status(404).json({message : err.message});
+        //console.log('ccccc');
+        res.status(404).json({message : error.message});
     }
 }
 
@@ -19,14 +20,14 @@ export const createBlog = async (req,res)=>{
 
     const newBlog = new BlogProperties(blog);
 
-    console.log(blog.creator);
+    //console.log(blog.creator);
 
     try {
         
         await newBlog.save();
 
         res.status(201).json(newBlog);
-
+        console.log('sucess');
     } catch (error) {
         //console.log(error);
         res.status(409).json({message : error.message});

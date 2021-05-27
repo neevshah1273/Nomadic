@@ -26,3 +26,32 @@ export const signup = (formData,history) => async (dispatch) => {
         console.log(error.message);
     }
 }
+
+export const getUsers = (username) => async(dispatch)=>{
+    try {
+        //console.log(username);
+        const {data} = await api.userDetails(username); 
+        console.log('data');
+        console.log(data);
+
+        
+        dispatch({ type : 'FETCH_USER',payload : data});
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+
+export const userAvl = (username) => async (dispatch) => {
+    try {
+        console.log(username);
+
+        const {data} = await api.userAvl(username);
+
+        
+        dispatch({ type : 'CHECK_AVL',payload : data});
+    } catch (error) {
+        console.log(error.message);
+    }
+}

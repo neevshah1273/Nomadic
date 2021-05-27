@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {useHistory, useLocation} from 'react-router-dom';
+import {useHistory, useLocation, Link} from 'react-router-dom';
 import useStyles from './styles';
 import {useDispatch} from 'react-redux';
 import { getBlogs } from '../../actions/blogs';
-import Blogs from '../Blogs/Blogs';
+import Blogs from '../Blogs/Blogs.js';
 import BlogEditor from '../BlogEditor/BlogEditor.js';
 import { Button } from '@material-ui/core';
+import './Feed.css';
 
 
 const Feed = () => {
@@ -37,12 +38,21 @@ const Feed = () => {
 
     return (
         <div>
-            <Button onClick={LogOut}>LogOut</Button>
             <div>
-                {user?.result.name}
+                <div>
+                    <Button onClick={LogOut}>LogOut</Button>
+                </div>
+                <div>
+                <Link to="/NewBlog" className="btn btn-primary">Create New Blog</Link>
+                </div>   
             </div>
-            <Blogs/>
-            <BlogEditor/>
+            
+            {/*<div>
+                {user?.result.name}
+            </div>*/}
+            <Blogs/> 
+            {/* <BlogEditor/>*/}
+            
         </div>
     )
 }

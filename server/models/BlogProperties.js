@@ -1,5 +1,14 @@
 import mongoose from 'mongoose';
 
+
+const Blogbody = mongoose.Schema({
+    IsImage : {
+        type : Boolean,
+        default : false,
+    },
+    content : String,
+});
+
 const blogSchema = mongoose.Schema({
     title : String,
     creator : String,
@@ -14,7 +23,7 @@ const blogSchema = mongoose.Schema({
         default : new Date(),
     },
     location : String,
-    blogBody : String,
+    blogBody : [Blogbody],
     
 });
 

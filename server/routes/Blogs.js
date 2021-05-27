@@ -4,7 +4,7 @@ import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.get('/',auth, getBlogs );
-router.post('/',auth, createBlog );
+router.get('/', getBlogs );
+router.post('/',createBlog );
 
 export default router;
