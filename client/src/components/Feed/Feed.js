@@ -3,8 +3,8 @@ import {useHistory, useLocation, Link} from 'react-router-dom';
 import useStyles from './styles';
 import {useDispatch} from 'react-redux';
 import { getBlogs } from '../../actions/blogs';
-import Blogs from '../Blogs/Blogs.js';
-import BlogEditor from '../BlogEditor/BlogEditor.js';
+import Blogs from '../Blogs/blogs.js';
+import BlogEditor from '../BlogEditor/blogEditor.js';
 import { Button } from '@material-ui/core';
 import './Feed.css';
 

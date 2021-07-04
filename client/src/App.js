@@ -5,7 +5,7 @@ import Home from './components/Home/Home';
 import Feed from './components/Feed/Feed.js';
 import User from './components/UserProfile/UserProfile.js';
 import Blog from './components/Blogs/Blog/blog.js';
-import BlogEditor from './components/BlogEditor/BlogEditor';
+import BlogEditor from './components/BlogEditor/blogEditor.js';
 
 const App = () => (
     <BrowserRouter>
