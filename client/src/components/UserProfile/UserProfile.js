@@ -49,6 +49,7 @@ const UserProfile = () => {
                                 </Link>
                                 
                             </Typography>
+                            <h1>Hiii...</h1>
                             <Typography variant="subtitle1" color="textSecondary">
                             <Link
                             to={`/users/${blog.creator}`}
