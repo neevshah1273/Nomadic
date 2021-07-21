@@ -40,10 +40,10 @@ const Feed = () => {
         <div>
             <div className="d-flex justify-content-between m-3 ">
                 <div className="">
-                    <Link to="/NewBlog" className="btn btn-primary">Create New Blog</Link>
+                    <Link to="/NewBlog" className="btn btn-lg btn-primary">Create New Blog</Link>
                 </div>
                 <div>
-                    <button onClick={LogOut} className="btn btn-primary">Log Out</button>
+                    <button onClick={LogOut} className="btn btn-lg btn-primary">Log Out</button>
                 </div>
             </div>
             {/*<div>
