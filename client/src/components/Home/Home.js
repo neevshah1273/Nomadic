@@ -101,7 +101,7 @@ const Home = () => {
                                                 </div>
                                                 <Input valid={usernameAvl} onChange={handleChange} type="text" name="username" id="username" placeholder="username" />
                                                 {usernameAvl ?
-                                                    <FormFeedback valid tooltip>that name is available</FormFeedback>
+                                                    <FormFeedback valid tooltip>That name is available</FormFeedback>
                                                     : (
                                                         <FormFeedback tooltip>Oh noes! that name is already taken</FormFeedback>
                                                     )

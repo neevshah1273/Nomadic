@@ -36,7 +36,7 @@ const Blogs = () => {
                                     </Link>
                                 </Typography>
                                 <Typography variant="subtitle1" color="textSecondary">
-                                    <Link
+                                    <Link 
                                         to={`/users/${blog.creator}`}
                                     >
                                         Created By {blog.creator}
