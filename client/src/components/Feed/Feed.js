@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {useHistory, useLocation, Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation, Link } from 'react-router-dom';
 import useStyles from './styles';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../actions/blogs';
 import Blogs from '../Blogs/blogs.js';
 import BlogEditor from '../BlogEditor/blogEditor.js';
@@ -11,48 +11,46 @@ import './Feed.css';
 
 const Feed = () => {
 
-    const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const dispatch = useDispatch();
     const classes = useStyles();
     const history = useHistory();
     const location = useLocation();
 
-    const LogOut = () =>{
-        dispatch({type: 'LOGOUT'});
+    const LogOut = () => {
+        dispatch({ type: 'LOGOUT' });
 
         history.push('/');
 
         setUser(null);
     }
 
-    useEffect(()=>{
-        
-        dispatch(getBlogs());
-    },[dispatch]);
+    useEffect(() => {
 
-    useEffect(()=>{
+        dispatch(getBlogs());
+    }, [dispatch]);
+
+    useEffect(() => {
         const token = user?.token;
 
         setUser(JSON.parse(localStorage.getItem('profile')));
-    },[location]);
+    }, [location]);
 
     return (
         <div>
-            <div>
-                <div>
-                    <Button onClick={LogOut}>LogOut</Button>
+            <div className="d-flex justify-content-between m-3 ">
+                <div className="">
+                    <Link to="/NewBlog" className="btn btn-primary">Create New Blog</Link>
                 </div>
                 <div>
-                <Link to="/NewBlog" className="btn btn-primary">Create New Blog</Link>
-                </div>   
+                    <button onClick={LogOut} className="btn btn-primary">Log Out</button>
+                </div>
             </div>
-            
             {/*<div>
                 {user?.result.name}
             </div>*/}
-            <Blogs/> 
+            <Blogs />
             {/* <BlogEditor/>*/}
-            
         </div>
     )
 }
