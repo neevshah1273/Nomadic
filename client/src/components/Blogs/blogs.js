@@ -36,7 +36,7 @@ const Blogs = () => {
                                     </Link>
                                 </Typography>
                                 <Typography variant="subtitle1" color="textSecondary">
-                                    <Link 
+                                    <Link
                                         to={`/users/${blog.creator}`}
                                     >
                                         Created By {blog.creator}
@@ -58,8 +58,6 @@ const Blogs = () => {
                     </Card>
                     {/* <Blog blog={blog}/> */}
                 </Grid >
-
-
             ))
             // <Grid className={classes.container} container alignItems="stretch" spacing={3}>
             //     <div>blogg</div>
