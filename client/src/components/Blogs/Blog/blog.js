@@ -71,8 +71,9 @@ const Blog = () => {
                                 >
                                     Created By {blog.creator}
                                 </Link>
-                                <div>
-                                    Follow Button and upvote button
+                                <div className="">
+                                <button className="btn btn-lg btn-primary">Follow</button>
+                                <button className="btn btn-lg btn-primary">Up Vote</button>
                                 </div>
                                 
                             </div>
@@ -92,7 +93,7 @@ const Blog = () => {
                                     ):(
                                         <div>
                                             <Typography
-                                            display="block"
+                                          display="block"
                                             paragraph="true"
                                             >
                                                 {Body.content}
