@@ -99,7 +99,7 @@ const Home = () => {
                                                 <div className="input-group-prepend">
                                                     <div className="input-group-text sptext">@</div>
                                                 </div>
-                                                <Input valid={usernameAvl} onChange={handleChange} type="text" name="username" id="username" placeholder="username" />
+                                                <Input valid={usernameAvl} onChange={handleChange} type="text" name="Username" id="username" placeholder="Username" />
                                                 {usernameAvl ?
                                                     <FormFeedback valid tooltip>That name is available</FormFeedback>
                                                     : (

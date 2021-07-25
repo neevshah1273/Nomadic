@@ -52,7 +52,7 @@ const Blogs = () => {
                             />
                         ) : (
                             <div>
-                                nullImage
+                                nullimage
                             </div>
                         )}
                     </Card>

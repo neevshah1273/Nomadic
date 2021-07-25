@@ -5,7 +5,7 @@ import moment from 'moment';
 
 
 import { Link, useLocation, useParams } from 'react-router-dom';
-
+import './blog.css';
 
 
 const Blog = () => {
@@ -46,7 +46,7 @@ const Blog = () => {
 
     return(
         
-        <div>
+        <div className="x">
             {
                 (blog && BBody)? 
                 (
@@ -71,9 +71,13 @@ const Blog = () => {
                                 >
                                     Created By {blog.creator}
                                 </Link>
-                                <div className="">
-                                <button className="btn btn-lg btn-primary">Follow</button>
-                                <button className="btn btn-lg btn-primary">Up Vote</button>
+                                <div className="row">
+                                    <div className="col">
+                                      <button className="btn btn-lg btn-primary ">Follow</button>
+                                    </div>
+                                    <div className="col">
+                                       <button className="btn btn-lg btn-primary ">Up Vote</button>
+                                    </div>
                                 </div>
                                 
                             </div>
