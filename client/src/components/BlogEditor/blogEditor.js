@@ -3,6 +3,7 @@ import FileBase from 'react-file-base64';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import useStyles from './styles';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { createBlog } from '../../actions/blogs';
 
 
@@ -12,6 +13,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 
 const BlogEditor = () => {
+    const history = useHistory();
 
     const CurrentUser = JSON.parse(localStorage.getItem('profile'));
     //console.log(CurrentUser.result);
@@ -24,7 +26,7 @@ const BlogEditor = () => {
 
     const [blogData, setBlogData] = useState({
         title: '',
-        creator: CurrentUser.result.username,
+        creator: CurrentUser.result.username || CurrentUser.result.getName(),
         tags: '',
         blogBody: inputFields,
         selectedFile: '',
@@ -35,6 +37,7 @@ const BlogEditor = () => {
         e.preventDefault();
         console.log(blogData);
         dispatch(createBlog(blogData));
+        history.push('/Feed');
     }
 
 
