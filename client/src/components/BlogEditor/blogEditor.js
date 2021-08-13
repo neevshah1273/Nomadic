@@ -26,7 +26,7 @@ const BlogEditor = () => {
 
     const [blogData, setBlogData] = useState({
         title: '',
-        creator: CurrentUser.result.username || CurrentUser.result.getName(),
+        creator: CurrentUser.result.username,
         tags: '',
         blogBody: inputFields,
         selectedFile: '',
