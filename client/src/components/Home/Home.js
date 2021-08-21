@@ -30,8 +30,9 @@ const Home = () => {
     const classes = useStyles();
 
     const handleChange = (e) => {
-        //console.log(e.target.name);
+        console.log(e.target.name);
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        console.log(formData);
         //console.log(e.target.value);
         //console.log(formData);
         if (isSignup) {
@@ -44,6 +45,7 @@ const Home = () => {
         e.preventDefault();
         //console.log('mm;klm;m;k');
         if (isSignup) {
+            console.log(formData);
             dispatch(signup(formData, history))
         } else {
             dispatch(signin(formData, history))
@@ -94,12 +96,12 @@ const Home = () => {
                                 <Form onSubmit={handleSubmit}>
                                     {isSignup ?
                                         <FormGroup>
-                                            <Label for="username" className="bold_txt">Username</Label>
+                                            <Label for="username" className="bold_txt">username</Label>
                                             <div className="input-group mb-2">
                                                 <div className="input-group-prepend">
                                                     <div className="input-group-text sptext">@</div>
                                                 </div>
-                                                <Input valid={usernameAvl} onChange={handleChange} type="text" name="Username" id="username" placeholder="Username" />
+                                                <Input valid={usernameAvl} onChange={handleChange} type="text" name="username" id="username" placeholder="username" />
                                                 {usernameAvl ?
                                                     <FormFeedback valid tooltip>That name is available</FormFeedback>
                                                     : (
