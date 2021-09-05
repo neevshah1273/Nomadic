@@ -99,6 +99,7 @@ const BlogEditor = () => {
                                                 type="file"
                                                 multiple={false}
                                                 onDone={(base64) => handleIpIChange(base64, index)}
+
                                             />
                                         </div>
                                     ) : (
