@@ -28,7 +28,7 @@ export const signin = async (req,res) => {
 
 export const signup = async (req,res) => {
     const {username, email, password} = req.body;
-
+    console.log(username);
     try {
         const existingUser = await user.findOne({email});
 
@@ -42,6 +42,7 @@ export const signup = async (req,res) => {
 
         res.status(200).json({result, token});
     } catch (error) {
+        console.log(error.message);
         res.status(500).json({message: 'Something Went Wrong'});
     }
 }
