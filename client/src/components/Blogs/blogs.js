@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+import './blogs.css';
 
 const Blogs = () => {
 
@@ -43,6 +44,10 @@ const Blogs = () => {
                                     </Link>
                                 </Typography>
                             </CardContent>
+                            
+                            <div>
+                            <button className="btn btn-lg btn-primary btn1">Delete</button>
+                            </div>
                         </div>
                         {blog.selectedFile ? (
                             <CardMedia

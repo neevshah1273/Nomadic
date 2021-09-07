@@ -83,6 +83,10 @@ const Blog = () => {
                                             </div>
                                         </div>
 
+                                        <div className="col">
+                                           <button  className="btn btn-lg btn-primary">Delete</button>
+                                           </div>
+
                                     </div>
                                 </div>
                                 <div className="col-lg-9">

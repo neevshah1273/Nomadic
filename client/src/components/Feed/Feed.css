@@ -4,3 +4,17 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+.col{
+    margin: 0;
+}
+.c1{
+    text-align: left;
+}
+.c2{
+    text-align: right;
+    margin: 0;
+}
+.x1{
+    margin-left: 10%;
+    padding-right: 10;
+}

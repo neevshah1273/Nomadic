@@ -38,13 +38,15 @@ const Feed = () => {
 
     return (
         <div>
-            <div className="d-flex justify-content-between m-3 ">
-                <div className="">
+            <div className="d-flex justify-content-between m-3 row ">
+                <div className="col c1">
                     <Link to="/NewBlog" className="btn btn-lg btn-primary">Create New Blog</Link>
                 </div>
-                <div>
+                <div className="col c2">
                     <button onClick={LogOut} className="btn btn-lg btn-primary">Log Out</button>
+                    <button onClick={LogOut} className="btn btn-lg btn-primary x1">My Profile</button>
                 </div>
+                
             </div>
             {/*<div>
                 {user?.result.name}
