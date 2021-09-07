@@ -10,7 +10,6 @@ import './blog.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-
 const Blog = () => {
     const { id } = useParams();
     console.log(id);
@@ -76,17 +75,19 @@ const Blog = () => {
                                         </Link>
                                         <div className="row">
                                             <div className="col">
-                                                <button className="btn btn-lg btn-primary ">  <FontAwesomeIcon icon={faCoffee} /> Follow</button>
+                                                <button className="btn btn-lg btn-primary "><FontAwesomeIcon icon={faCoffee}/> Follow</button>
                                             </div>
-                                            <div className="col">
+                                            &nbsp;
+                                            <div className="row">
+                                                <div>
                                                 <button className="btn btn-lg btn-primary ">Up Vote</button>
+                                                </div>
+                                                &nbsp;
+                                                <div>
+                                                  <button className="btn btn-lg btn-primary">Delete</button>
+                                               </div>  
                                             </div>
                                         </div>
-
-                                        <div className="col">
-                                           <button  className="btn btn-lg btn-primary">Delete</button>
-                                           </div>
-
                                     </div>
                                 </div>
                                 <div className="col-lg-9">

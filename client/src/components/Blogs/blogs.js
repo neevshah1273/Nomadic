@@ -45,10 +45,8 @@ const Blogs = () => {
                                 </Typography>
                             </CardContent>
                             
-                            <div>
-                            <button className="btn btn-lg btn-primary btn1">Delete</button>
-                            </div>
                         </div>
+                        
                         {blog.selectedFile ? (
                             <CardMedia
                                 className={classes.cover}
@@ -62,6 +60,10 @@ const Blogs = () => {
                         )}
                     </Card>
                     {/* <Blog blog={blog}/> */}
+                    
+                    <div>
+                        <button className="btn btn-lg btn-primary btn1">Delete</button>
+                     </div>
                 </Grid >
             ))
             // <Grid className={classes.container} container alignItems="stretch" spacing={3}>
