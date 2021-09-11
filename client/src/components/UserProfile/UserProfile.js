@@ -15,6 +15,11 @@ const UserProfile = () => {
     const location = useLocation();
     const classes = useStyles();
     //const Blogs = useSelector((state)=> state.blogs);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    useEffect(()=>{
+        setUser(JSON.parse(localStorage.getItem('profile')).result);
+        //console.log(user);
+    },[user]);
 
     //console.log(usernm);
     // useEffect(() => {
@@ -49,6 +54,13 @@ const UserProfile = () => {
                                                 </Link>
 
                                             </Typography>
+                                            {user.username==blog.creator?
+                                                <div>
+                                                <button className="btn btn-lg btn-primary btn1">Delete</button>
+                                                </div>
+                                            :
+                                            <div></div>    
+                                            }
                                             <Typography variant="subtitle1" color="textSecondary">
                                                 <Link
                                                     to={`/users/${blog.creator}`}

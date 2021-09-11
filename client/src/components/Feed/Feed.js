@@ -25,6 +25,10 @@ const Feed = () => {
         setUser(null);
     }
 
+    const MyProfile = () => {
+        history.push(`/users/${user.username}`);
+    }
+
     useEffect(() => {
 
         dispatch(getBlogs());
@@ -33,7 +37,7 @@ const Feed = () => {
     useEffect(() => {
         const token = user?.token;
 
-        setUser(JSON.parse(localStorage.getItem('profile')));
+        setUser(JSON.parse(localStorage.getItem('profile')).result);
     }, [location]);
 
     return (
@@ -44,7 +48,7 @@ const Feed = () => {
                 </div>
                 <div className="col c2">
                     <button onClick={LogOut} className="btn btn-lg btn-primary">Log Out</button>
-                    <button onClick={LogOut} className="btn btn-lg btn-primary x1">My Profile</button>
+                    <button onClick={MyProfile} className="btn btn-lg btn-primary x1">My Profile</button>
                 </div>
                 
             </div>
