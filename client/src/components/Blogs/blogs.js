@@ -22,7 +22,7 @@ const Blogs = () => {
     //console.log(Blogs);
 
     useEffect(()=>{
-        setUser(JSON.parse(localStorage.getItem('profile')).result);
+        setUser(JSON.parse(localStorage.getItem('profile'))?.result);
         //console.log(user);
     },[user]);
 

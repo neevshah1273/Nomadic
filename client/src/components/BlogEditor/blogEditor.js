@@ -52,8 +52,10 @@ const BlogEditor = () => {
     }
 
     const handleIpIChange = (base64, index) => {
+        //console.log(base64.base64);
+        const link = base64.base64;
         const values = [...inputFields];
-        values[index]['content'] = base64;
+        values[index]['content'] = link;
         SetInputFields(values);
         setBlogData({ ...blogData, blogBody: inputFields });
     }

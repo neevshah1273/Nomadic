@@ -20,12 +20,14 @@ export const createBlog = async (req,res)=>{
 
     const newBlog = new BlogProperties(blog);
 
-    //console.log(blog.creator);
+    console.log(newBlog);
 
     try {
         
         await newBlog.save();
 
+        console.log(newBlog);
+        console.log("err");
         res.status(201).json(newBlog);
         console.log('sucess');
     } catch (error) {

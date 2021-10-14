@@ -75,7 +75,9 @@ const Blog = () => {
                                         </Link>
                                         <div className="row">
                                             <div className="col">
-                                                <button className="btn btn-lg btn-primary "><FontAwesomeIcon icon={faCoffee}/> Follow</button>
+                                                <button className="btn btn-lg btn-primary ">
+                                                    <FontAwesomeIcon icon={faCoffee}/> Follow
+                                                </button>
                                             </div>
                                             &nbsp;
                                             <div className="row">
@@ -101,6 +103,7 @@ const Blog = () => {
                                                     <CardMedia
                                                         src={Body.content}
                                                     />
+                                                    {Body.content}
                                                 </div>
                                             ) : (
                                                 <div>

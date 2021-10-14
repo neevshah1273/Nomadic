@@ -18,9 +18,12 @@ const Feed = () => {
     const location = useLocation();
 
     const LogOut = () => {
-        dispatch({ type: 'LOGOUT' });
 
         history.push('/');
+        
+        dispatch({ type: 'LOGOUT' });
+
+
 
         setUser(null);
     }
