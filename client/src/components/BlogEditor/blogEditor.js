@@ -53,9 +53,9 @@ const BlogEditor = () => {
 
     const handleIpIChange = (base64, index) => {
         //console.log(base64.base64);
-        const link = base64.base64;
+        //const link = base64.base64;
         const values = [...inputFields];
-        values[index]['content'] = link;
+        values[index]['content'] = base64;
         SetInputFields(values);
         setBlogData({ ...blogData, blogBody: inputFields });
     }
@@ -103,7 +103,7 @@ const BlogEditor = () => {
                                             <FileBase
                                                 type="file"
                                                 multiple={false}
-                                                onDone={(base64) => handleIpIChange(base64, index)}
+                                                onDone={({base64}) => handleIpIChange(base64, index)}
 
                                             />
                                         </div>

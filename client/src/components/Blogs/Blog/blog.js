@@ -100,10 +100,12 @@ const Blog = () => {
                                             //console.log(Body.IsImage)
                                             Body.IsImage ? (
                                                 <div>
-                                                    <CardMedia
+                                                    {/* <CardMedia
                                                         src={Body.content}
+                                                    /> */}
+                                                    <img src={Body.content}
                                                     />
-                                                    {Body.content}
+                                                    
                                                 </div>
                                             ) : (
                                                 <div>
