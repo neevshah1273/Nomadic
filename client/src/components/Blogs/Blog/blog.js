@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
-
+import follow from '../../../assets/follow.png';
+import upvote from '../../../assets/upvote.png';
+import remove from '../../../assets/bin.png';
 
 import { Link, useLocation, useParams } from 'react-router-dom';
 import './blog.css';
@@ -66,30 +68,36 @@ const Blog = () => {
 
                             <div className="row">
                                 <div className="col-lg-3">
-                                    <div className="Creator row">
-
-                                        <Link
-                                            to={`/users/${blog.creator}`}
-                                        >
-                                            Created By {blog.creator}
-                                        </Link>
+                                    <div className="Creator">
                                         <div className="row">
-                                            <div className="col">
-                                                <button className="btn btn-lg btn-primary ">
-                                                    <FontAwesomeIcon icon={faCoffee}/> Follow
-                                                </button>
-                                            </div>
-                                            &nbsp;
-                                            <div className="row">
-                                                <div>
-                                                <button className="btn btn-lg btn-primary ">Up Vote</button>
-                                                </div>
-                                                &nbsp;
-                                                <div>
-                                                  <button className="btn btn-lg btn-primary">Delete</button>
-                                               </div>  
-                                            </div>
+                                            <Link
+                                                to={`/users/${blog.creator}`}
+                                            >
+                                                Created By {blog.creator}
+                                            </Link>                        
                                         </div>
+                                        
+                                        
+                                        <div className="row f">                                            
+                                            <button className="btn btn-lg btn-primary ">
+                                                <img src={follow} className="follow"/>
+                                                Follow
+                                            </button>
+                                        </div>
+
+                                        <div className="row f">
+                                            <button className="btn btn-lg btn-primary ">
+                                            <img src={upvote} className="follow"/>
+                                                Up Vote</button>
+                                        </div>
+
+                                        <div className="row f">
+                                            <button className="btn btn-lg btn-primary">
+                                            <img src={remove} className="follow"/>
+                                                Delete</button>
+                                        </div>
+
+
                                     </div>
                                 </div>
                                 <div className="col-lg-9">
