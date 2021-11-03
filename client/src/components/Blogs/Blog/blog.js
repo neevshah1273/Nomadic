@@ -5,16 +5,15 @@ import moment from 'moment';
 import follow from '../../../assets/follow.png';
 import upvote from '../../../assets/upvote.png';
 import remove from '../../../assets/bin.png';
-
+import { useHistory } from 'react-router-dom';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import './blog.css';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { deleteBlog } from '../../../actions/blogs';
 
 const Blog = () => {
     const { id } = useParams();
     console.log(id);
+    const history = useHistory();
 
 
     const Blogs = useSelector((state) => state.blogs);
@@ -92,7 +91,13 @@ const Blog = () => {
                                         </div>
 
                                         <div className="row f">
-                                            <button className="btn btn-lg btn-primary">
+                                            <button className="btn btn-lg btn-primary" onClick={
+                                                deleteBlog(history,blog._id)
+
+                                                
+                                                
+                                                
+                                            }>
                                             <img src={remove} className="follow"/>
                                                 Delete</button>
                                         </div>

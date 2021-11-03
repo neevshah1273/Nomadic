@@ -13,4 +13,4 @@ export const userDetails = (username) => API.get(`/users/${username}`);
 
 export const userAvl = (username) => API.get('/user/Avl',username);
 
-export const deleteBlog = (blogId) => API.delete('/blogs',blogId);
+export const deleteBlogs = (id) => API.delete(`/blogs/${id}`);

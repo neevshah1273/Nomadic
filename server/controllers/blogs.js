@@ -38,15 +38,26 @@ export const createBlog = async (req,res)=>{
 }
 
 export const deleteBlog = async(req,res)=>{
-    
-    const id = req.body;
+    //console.log(req);
+    const id = req.params.id;
+    console.log(id);
     //const id = req.body;
 
     // if(!Mongoose.Types.ObjectId.isValid(id)){
     //     return res.status(404).send("No blogs with that id");
     // }
 
-    await BlogProperties.findByIdAndRemove(id);
+    try {
+            
+        await BlogProperties.findByIdAndRemove(id);
 
-    res.status(200).json({ message: "Blog deleted successfully" });
+        console.log('Blog deleted');
+    
+        res.status(200).json({ message: "Blog deleted successfully" });
+
+    } catch (error) {
+        console.log(error.message)
+    }
+
+
 }

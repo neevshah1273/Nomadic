@@ -24,12 +24,18 @@ export const createBlog = (blog) => async(dispatch) =>{
     }
 }
 
-export const deleteBlog = (blogId) => async(dispatch) =>{
+export const deleteBlog = (history,id) => async(dispatch) =>{
+    console.log('ert');
     try {
-        await api.deleteBlog(blogId);
+        console.log(id);
+        await api.deleteBlogs(id);
+        console.log('Problem in dispatch');
 
-        dispatch({type: 'DELETE',payload:blogId});
+        //dispatch({type: 'DELETE',payload:id});
         
+        history.push('/Feed');
+        //console.log('Should be done');
+          
     } catch (error) {
         console.log(error.message);
     }
