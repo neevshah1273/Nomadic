@@ -186,7 +186,7 @@ const BlogEditor = () => {
                             <FileBase
                                 type="file"
                                 multiple={false}
-                                onDone={(base64) => { setBlogData({ ...blogData, selectedFile: base64 }) }}
+                                onDone={({base64}) => { setBlogData({ ...blogData, selectedFile: base64 }) }}
                             />
                         </div>
                     </div>
