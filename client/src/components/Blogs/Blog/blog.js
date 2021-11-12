@@ -80,6 +80,8 @@ const Blog = () => {
                                         <div className="row f">                                            
                                             <button className="btn btn-lg btn-primary ">
                                                 <img src={follow} className="follow"/>
+                                                &nbsp;
+                                                &nbsp;
                                                 Follow
                                             </button>
                                         </div>
@@ -87,6 +89,8 @@ const Blog = () => {
                                         <div className="row f">
                                             <button className="btn btn-lg btn-primary ">
                                             <img src={upvote} className="follow"/>
+                                            &nbsp;
+                                            &nbsp;
                                                 Up Vote</button>
                                         </div>
 
@@ -99,6 +103,8 @@ const Blog = () => {
                                                 
                                             }>
                                             <img src={remove} className="follow"/>
+                                            &nbsp;
+                                            &nbsp;
                                                 Delete</button>
                                         </div>
 
