@@ -78,7 +78,7 @@ const Home = () => {
     const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
 
     return (
-        <div>
+        <div className="home">
             <div className="row">
                 <div className="col-lg-12">
                     <h1 className="title d-flex justify-content-center">Nomadic</h1>

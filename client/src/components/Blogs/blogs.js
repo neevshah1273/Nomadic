@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import { Link } from 'react-router-dom';
 import './blogs.css';
 
@@ -48,7 +49,10 @@ const Blogs = () => {
                                     </div>
                                     {user.username==blog.creator?
                                         <div>
-                                        <button className="btn btn-lg btn-primary btn1">Delete</button>
+                                        <button className="btn btn-lg btn-primary btn1">
+                                            <DeleteRoundedIcon/>
+                                            Delete
+                                        </button>
                                         </div>
                                     :
                                     <div></div>    
@@ -75,7 +79,9 @@ const Blogs = () => {
                             />
                         ) : (
                             <div>
-                                nullimage
+                                <CardMedia
+                                    className={classes.normal}
+                                />
                             </div>
                         )}
                     </Card>

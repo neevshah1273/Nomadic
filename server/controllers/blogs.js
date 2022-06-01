@@ -5,7 +5,7 @@ export const getBlogs = async (req,res)=>{
     try {
         const blogProperties = await BlogProperties.find();
 
-        console.log(blogProperties);
+        //console.log(blogProperties);
 
         res.status(200).json(blogProperties);
 

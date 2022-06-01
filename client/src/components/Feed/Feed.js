@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../actions/blogs';
 import Blogs from '../Blogs/blogs.js';
 import BlogEditor from '../BlogEditor/blogEditor.js';
-import { Button } from '@material-ui/core';
+import { Button, Icon } from '@material-ui/core';
+import write from '../../assets/writing.png';
 import './Feed.css';
-
+import CreateSharpIcon from '@mui/icons-material/CreateSharp';
 
 const Feed = () => {
 
@@ -44,10 +45,14 @@ const Feed = () => {
     }, [location]);
 
     return (
-        <div>
-            <div className="d-flex justify-content-between m-3 row ">
+        <div className="spe">
+            <div className="d-flex justify-content-between p-3 row">
                 <div className="col c1">
-                    <Link to="/NewBlog" className="btn btn-lg btn-primary">Create New Blog</Link>
+                    <Link to="/NewBlog" className="btn btn-lg btn-primary">
+                        <CreateSharpIcon className="padd"/>                        
+                        {/* <img src={write} className="write"/> */}
+                            Write New Blog
+                    </Link>
                 </div>
                 <div className="col c2">
                     <button onClick={LogOut} className="btn btn-lg btn-primary">Log Out</button>

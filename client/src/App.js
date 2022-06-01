@@ -9,7 +9,7 @@ import BlogEditor from './components/BlogEditor/blogEditor.js';
 
 const App = () => (
     <BrowserRouter>
-        <Container maxWidth="lg">
+        <Container disableGutters maxWidth={false}>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/Feed" exact component={Feed} />

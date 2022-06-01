@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Zen+Tokyo+Zoo&display=swap');
-body{
+.home{
     background-color: #ffffff;
     background: linear-gradient(to bottom left, #33ccff 70%, #ff99cc 30%);
     background-attachment: fixed;
@@ -8,7 +8,7 @@ body{
 }
 
 .Jumbotron_style{
-       background: linear-gradient(to bottom right, #33ccff 30%, #ff99cc 70%);
+    background: linear-gradient(to bottom right, #33ccff 30%, #ff99cc 70%);
 }
 
 .title{
@@ -36,6 +36,7 @@ body{
     1px 25px 35px rgba(16,16,16,0.2),
     1px 30px 60px rgba(16,16,16,0.4);
 }
+
 .title2{
     font-family: Zen Tokyo Zoo;
     font-size: 50px;
@@ -86,7 +87,3 @@ body{
 .bold_txt{
     font-weight: bolder;
 }
-/*
-
-
-*/

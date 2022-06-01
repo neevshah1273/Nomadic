@@ -18,6 +18,5 @@ export default makeStyles((theme) => ({
   },
   cover: {
     // width: 350,
-  },
-
+  }
 }));
